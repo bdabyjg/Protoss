@@ -18,6 +18,10 @@ Page({
     var id = 1;
     var data = home.getBannerData(id,(res)=>{
       console.log(res);
+      //进行数据绑定，不用dom操作，而是用微信程序接口
+      this.setData({
+        'bannerArr':res.items,
+      })
     });
   },//处理异步结果接受的方法
   

@@ -1,4 +1,18 @@
 <!--pages/home/home.wxml-->
-<text>test
-test
-test</text>
+<view>
+<swiper>
+    <block wx:for="{{bannerArr}}" wx:for-item="banner">
+    <swiper-item>
+        <image src="{{banner.img.url}}"></image>   
+        <!-- 本质上src放的是路径，所以这里的属性最终是url,记得加双引号不然会报错 -->
+    </swiper-item>
+    </block>
+</swiper>
+<view>
+    test
+    test
+    test
+</view>
+</view>
+
+
