@@ -26,6 +26,16 @@ getThemeData(callback){
     }
     this.request(params);
 }
+
+getProductsData(callback){
+    var params = {
+        url:'product/recent',
+        sCallback:function(data){
+            callback && callback(data);
+        }
+    }
+    this.request(params);
+}
 }
     
 

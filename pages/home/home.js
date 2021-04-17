@@ -21,12 +21,20 @@ Page({
         'bannerArr':res.items,
       })
     });
+
     home.getThemeData((res)=>{
-      console.log(res);
+      // console.log(res);
       this.setData({
         'themeArr': res,
       })
     });
+
+    home.getProductsData((data)=>{
+      console.log(data)
+      this.setData({
+        productsArr: data
+      })
+    })
   
   },//处理异步结果接受的方法
 

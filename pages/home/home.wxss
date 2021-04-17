@@ -1,8 +1,8 @@
-/* @import "../tpls/base.wxss";
-@import "../tpls/products/products-tpl.wxss"; */
-.food-container{
+@import "../tpls/base.wxss";
+@import "../tpls/products/products-tpl.wxss";
+/* .food-container{
 
-}
+} */
 .swiper{
   height: 400rpx;
   width: 100%;
@@ -31,7 +31,7 @@
 }
 
 .home-main-theme{
-  /*margin: 20rpx 0;*/
+  margin: 20rpx 0;
 }
 .theme-box{
   display: flex;
