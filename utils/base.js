@@ -25,7 +25,7 @@ class Base{
                 // if(params.sCallBack){
                 //     params.sCallBack(res);
                 // } 这种写法和下面的写法是相同的
-                params.sCallBack&&params.sCallBack(res.data);
+                params.sCallback&&params.sCallback(res.data);
 
             },//接受成功的回调结果,s表示success
             fail:function(err){

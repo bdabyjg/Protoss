@@ -6,29 +6,27 @@ class Home extends Base{
         super();
     }
 
-getBannerData(id,callBack){
+getBannerData(id,callback){
     var params = {
         url:'banner/'+id,
-        sCallBack:function(res){
-            callBack && callBack(res);
+        sCallback:function(res){
+            callback && callback(res);
+        }
+    }
+    this.request(params);
+}
+
+// 首页主题
+getThemeData(callback){
+    var params = {
+        url:'theme?ids=1,2,3',
+        sCallback:function(data){
+            callback && callback(data);
         }
     }
     this.request(params);
 }
 }
-            
-        
-
-        // wx.request({
-        //     url:'http://z.cn:8020/index.php/api/v1/banner/' + id,//获取banner图的服务器接口
-        //     method:'GET',
-        //     success:function(res){
-        //         // console.log(res);
-        //         // return res;
-        //         callBack(res);
-
-        //     }//依靠这个回调函数返回一个接收的结果，res代表服务器返回的结果
-        // })
     
 
 
