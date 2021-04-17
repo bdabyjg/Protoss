@@ -16,20 +16,28 @@ Page({
   },
   _loadData:function(){
     var id = 1;
-    var data = home.getBannerData(id,(res)=>{
-      console.log(res);
-      //进行数据绑定，不用dom操作，而是用微信程序接口
+    home.getBannerData(id,(res)=>{
       this.setData({
         'bannerArr':res.items,
       })
     });
+
+    home.getThemeData((res)=>{
+      // console.log(res);
+      this.setData({
+        'themeArr': res,
+      })
+    });
+
+    home.getProductsData((data)=>{
+      console.log(data)
+      this.setData({
+        productsArr: data
+      })
+    })
+  
   },//处理异步结果接受的方法
-  
-  callBack:function(res){
-    console.log(res);
-  }
 
 
-  
 
 })

@@ -1,17 +1,45 @@
 <!--pages/home/home.wxml-->
+
+<import src="../tpls/products/products-tpl.wxml"/>
+
+
 <view>
-<swiper>
-    <block wx:for="{{bannerArr}}" wx:for-item="banner">
-    <swiper-item>
-        <image src="{{banner.img.url}}"></image>   
-        <!-- 本质上src放的是路径，所以这里的属性最终是url,记得加双引号不然会报错 -->
+<swiper indicator-dots="true" autoplay="true" class="swiper">
+    <block wx:for="{{bannerArr}}" wx:for-item="banner"> 
+    <!-- wx:for的新写法 -->
+    <swiper-item class="banner-item">
+        <image mode="aspectFill" class="item-image" src="{{banner.img.url}}"></image>   
+        <!-- 本质上src放的是路径，所以这里的属性最终是url,记得加双引号不然会报错
+        如果是不规则的图片，就在image后面加个模式——mode="aspectFill" -->
     </swiper-item>
     </block>
 </swiper>
-<view>
-    test
-    test
-    test
+<view class="home-main">
+
+   <view class="home-main-theme">
+    <view class="home-main-header">
+       精选主题 
+    </view>
+    <view class="theme-box">
+        <block wx:for="{{themeArr}}" wx:for-item="theme">
+            <!-- 大图片有big -->
+            <view wx:if="{{index == 2}}" class="theme-item big">
+              <image src="{{theme.topic_img.url}}"></image>   
+            </view>
+            <!-- 小图片没有big -->
+            <view wx:else class="theme-item">
+              <image src="{{theme.topic_img.url}}"></image> 
+            </view>
+        
+        </block> 
+    </view>  
+   </view>
+   <view class="home-main-products"> 
+       <view class="home-main-header">
+           最近新品
+       </view>
+       <template is="products" data="{{products:productsArr}}"></template> 
+   </view>
 </view>
 </view>
 
