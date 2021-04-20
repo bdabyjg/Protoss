@@ -18,4 +18,5 @@ class Theme extends Base{
     }
 }
 
+export {Theme}
 
