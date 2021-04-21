@@ -14,13 +14,20 @@
       "list": [
         {
           "name": "home",
-          "pathName": "pages/index/home",
+          "pathName": "pages/home/home",
           "query": "",
           "scene": null
         },
         {
-          "name": "home",
-          "pathName": "pages/home/home",
+          "name": "product",
+          "pathName": "pages/product/product",
+          "query": "id=11",
+          "scene": null
+        },
+        {
+          "name": "category",
+          "pathName": "pages/category/category",
+          "query": "",
           "scene": null
         }
       ]

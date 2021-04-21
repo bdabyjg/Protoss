@@ -6,7 +6,8 @@ Page({
     data: {
         id: null,
         countsArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        productCount:1
+        productCount:1,
+        currentTabsIndex:0
     },
     /*生命周期函数--监听页面加载*/
     onLoad: function (options) {
@@ -30,6 +31,13 @@ Page({
         this.setData({
             productCount:selectedCount
         })
+    },
+
+    onTabsItemTap:function (event){
+        var index = product.getDataSet(event,'index');
+        this.setData({
+            currentTabsIndex: index
+        });
     }
 })
 
